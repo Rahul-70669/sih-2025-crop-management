@@ -4,9 +4,11 @@ import {Header} from "./components/organisms/Header/Header.tsx";
 import {Footer} from "./components/organisms/Footer/Footer.tsx";
 
 function App() {
-    <>
-        <Header/>
-        <Footer/>
-    </>
+   return(
+       <>
+           <Header/>
+           <Footer/>
+       </>
+   )
 }
-export default App
+export default App;
