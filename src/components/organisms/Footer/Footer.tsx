@@ -6,7 +6,7 @@ export const Footer = () => {
                     {/* Brand & Description */}
                     <div className="flex flex-col items-center md:items-start space-y-4 max-w-xs text-center md:text-left">
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                            <div className="w-30 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
                                 <span className="material-symbols-outlined text-[20px]">agriculture</span>
                             </div>
                             <span className="text-xl font-bold text-text-dark dark:text-white tracking-tight">FarmMitra</span>
