@@ -1,15 +1,75 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type {Meta, StoryFn} from '@storybook/react';
+import Badge from './Badge';
+import type {BadgeProps} from './BadgeProps';
 
-import { Badge } from './Badge';
-
-const meta = {
+export default {
+  title: 'Atoms/Badge',
   component: Badge,
-} satisfies Meta<typeof Badge>;
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: ['default', 'success', 'warning', 'danger'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large'],
+      },
+    },
+    text: {
+      control: 'text',
+    },
+    ariaLive: {
+      control: {
+        type: 'select',
+        options: ['polite', 'assertive', 'off'],
+      },
+    },
+  },
+} as Meta<typeof Badge>;
 
-export default meta;
+const Template: StoryFn<BadgeProps> = (args) => <Badge {...args} />;
 
-type Story = StoryObj<typeof meta>;
+export const Default = Template.bind({});
+Default.args = {
+  variant: 'default',
+  size: 'medium',
+  text: 'Default Badge',
+};
 
-export const Default: Story = {
-  args: {}
+export const Success = Template.bind({});
+Success.args = {
+  variant: 'success',
+  size: 'medium',
+  text: 'Success Badge',
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  variant: 'warning',
+  size: 'medium',
+  text: 'Warning Badge',
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  variant: 'danger',
+  size: 'medium',
+  text: 'Danger Badge',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  variant: 'default',
+  size: 'small',
+  text: 'Small Badge',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  variant: 'default',
+  size: 'large',
+  text: 'Large Badge',
 };

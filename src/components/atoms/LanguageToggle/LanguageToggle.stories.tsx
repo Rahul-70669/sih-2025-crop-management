@@ -1,15 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type {Meta, StoryFn} from '@storybook/react';
+import LanguageToggle from './LanguageToggle';
+import type {LanguageToggleProps} from './LanguageToggleProps';
 
-import { LanguageToggle } from './LanguageToggle';
-
-const meta = {
+export default {
+  title: 'Atoms/LanguageToggle',
   component: LanguageToggle,
-} satisfies Meta<typeof LanguageToggle>;
+} as Meta;
 
-export default meta;
+const Template: StoryFn<LanguageToggleProps> = (args) => <LanguageToggle {...args} />;
 
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
-  args: {}
+export const Default = Template.bind({});
+Default.args = {
+  currentLang: 'en',
+  onChange: (lang) => console.log(`Language changed to: ${lang}`),
 };
