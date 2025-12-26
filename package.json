@@ -2,7 +2,7 @@
   "name": "sih-2025-crop-management",
   "homepage": "https://Rahul-70669.github.io/sih-2025-crop-management/",
   "private": true,
-  "version": "0.2.9",
+  "version": "0.2.10",
   "type": "module",
   "scripts": {
     "dev": "vite --open --host",
