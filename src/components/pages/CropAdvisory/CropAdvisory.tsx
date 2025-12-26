@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CropSelector } from '../../organisms/CropSelector/CropSelector';
 import { SoilTypeSelector } from '../../molecule/SoilTypeSelector/SoilTypeSelector';
+import { AdvisoryPanel } from '../../organisms/AdvisoryPanel/AdvisoryPanel';
 import LocationSelector from '../../molecule/LocationSelector/LocationSelector';
 import { Button } from '../../atoms/Button/Button';
 import { Input } from '../../atoms/Input/Input';
@@ -141,37 +142,10 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
 
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-center text-primary">Your Crop Advisory</h2>
-        
-        <div className="card bg-base-100 shadow-xl border border-base-200">
-            <div className="card-body">
-                <h3 className="card-title text-secondary">Current Weather</h3>
-                <div className="stats shadow bg-base-200">
-                    <div className="stat place-items-center">
-                        <div className="stat-title">Temperature</div>
-                        <div className="stat-value text-primary">{advisory.weather.temp}°C</div>
-                    </div>
-                    <div className="stat place-items-center">
-                        <div className="stat-title">Condition</div>
-                        <div className="stat-value text-secondary text-lg">{advisory.weather.condition}</div>
-                    </div>
-                    <div className="stat place-items-center">
-                        <div className="stat-title">Humidity</div>
-                        <div className="stat-value text-accent">{advisory.weather.humidity}%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="space-y-4">
-            {advisory.recommendations.map((rec, index) => (
-                <div key={index} className="alert alert-info shadow-md flex-col items-start gap-1">
-                    <span className="font-bold text-xs uppercase tracking-wider opacity-70">{rec.category}</span>
-                    <span className="text-lg">{rec.text}</span>
-                </div>
-            ))}
-        </div>
-
+        <AdvisoryPanel 
+          weather={advisory.weather} 
+          recommendations={advisory.recommendations} 
+        />
         <div className="flex justify-center mt-8">
             <Button onClick={() => { setStep(1); setAdvisory(null); }} variant="secondary">
                 Start Over
