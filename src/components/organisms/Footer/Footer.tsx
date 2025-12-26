@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 export const Footer = () => {
     return (
         <footer className="w-full bg-neutral-cream dark:bg-[#1a2e22] border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
@@ -18,11 +20,11 @@ export const Footer = () => {
 
                     {/* Navigation Links */}
                     <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-text-muted dark:text-gray-300">
-                        <a className="hover:text-primary transition-colors duration-200" href="#">About Us</a>
-                        <a className="hover:text-primary transition-colors duration-200" href="#">Features</a>
-                        <a className="hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
-                        <a className="hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
-                        <a className="hover:text-primary transition-colors duration-200" href="#">Support</a>
+                        <Link className="hover:text-primary transition-colors duration-200" to="/">Home</Link>
+                        <Link className="hover:text-primary transition-colors duration-200" to="/advisory">Advisory</Link>
+                        <Link className="hover:text-primary transition-colors duration-200" to="/market-prices">Market</Link>
+                        <Link className="hover:text-primary transition-colors duration-200" to="/pest-detection">Pest Detection</Link>
+                        <Link className="hover:text-primary transition-colors duration-200" to="/profile">Profile</Link>
                     </nav>
 
                     {/* Social & Language */}

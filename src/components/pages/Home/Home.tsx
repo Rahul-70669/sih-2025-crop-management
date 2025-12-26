@@ -66,7 +66,10 @@ export const Home: React.FC = () => {
           <h2 className="text-xl font-bold">Recent Activity</h2>
           <div className="card bg-base-100 border border-base-200">
             <div className="card-body p-4 divide-y">
-              <div className="py-3 flex items-center justify-between">
+              <div 
+                className="py-3 flex items-center justify-between cursor-pointer hover:bg-base-200 transition-colors rounded-lg px-2"
+                onClick={() => navigate('/advisory')}
+              >
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-primary">eco</span>
                   <div>
@@ -76,7 +79,10 @@ export const Home: React.FC = () => {
                 </div>
                 <span className="material-symbols-outlined text-base-content/40">chevron_right</span>
               </div>
-              <div className="py-3 flex items-center justify-between">
+              <div 
+                className="py-3 flex items-center justify-between cursor-pointer hover:bg-base-200 transition-colors rounded-lg px-2"
+                onClick={() => navigate('/pest-detection')}
+              >
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-error">bug_report</span>
                   <div>

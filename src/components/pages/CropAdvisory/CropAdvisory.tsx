@@ -7,19 +7,20 @@ import { Button } from '../../atoms/Button/Button';
 import { Input } from '../../atoms/Input/Input';
 import { getAdvisory, type AdvisoryResponse } from '../../../services/advisoryService';
 import type { CropAdvisoryProps } from './CropAdvisoryProps';
+import MainLayout from '../../templates/MainLayout/MainLayout';
 
 // Mock Data
 const MOCK_CROPS = [
-  { id: '1', name: 'Wheat', description: 'Winter crop, requires cool weather.', imageUrl: 'https://placehold.co/400x300?text=Wheat' },
-  { id: '2', name: 'Rice', description: 'High water requirement, monsoon crop.', imageUrl: 'https://placehold.co/400x300?text=Rice' },
-  { id: '3', name: 'Corn', description: 'Versatile crop, moderate water.', imageUrl: 'https://placehold.co/400x300?text=Corn' },
-  { id: '4', name: 'Cotton', description: 'Cash crop, requires dry weather.', imageUrl: 'https://placehold.co/400x300?text=Cotton' },
+  { id: '1', name: 'Wheat', description: 'Winter crop, requires cool weather.', imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=400&h=300&auto=format&fit=crop' },
+  { id: '2', name: 'Rice', description: 'High water requirement, monsoon crop.', imageUrl: 'https://images.unsplash.com/photo-1536633101321-26ec0f06ca01?q=80&w=400&h=300&auto=format&fit=crop' },
+  { id: '3', name: 'Corn', description: 'Versatile crop, moderate water.', imageUrl: 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=400&h=300&auto=format&fit=crop' },
+  { id: '4', name: 'Cotton', description: 'Cash crop, requires dry weather.', imageUrl: 'https://images.unsplash.com/photo-1594904351111-a072f80b1a71?q=80&w=400&h=300&auto=format&fit=crop' },
 ];
 
 const MOCK_SOIL_TYPES = [
-  { id: 'clay', name: 'Clay', description: 'Heavy soil, holds water.', imageUrl: 'https://placehold.co/400x300?text=Clay' },
-  { id: 'sandy', name: 'Sandy', description: 'Drains quickly, low nutrients.', imageUrl: 'https://placehold.co/400x300?text=Sandy' },
-  { id: 'loamy', name: 'Loamy', description: 'Balanced soil, ideal for most crops.', imageUrl: 'https://placehold.co/400x300?text=Loam' },
+  { id: 'clay', name: 'Clay', description: 'Heavy soil, holds water.', imageUrl: 'https://images.unsplash.com/photo-1581067723553-34a737915b01?q=80&w=400&h=300&auto=format&fit=crop' },
+  { id: 'sandy', name: 'Sandy', description: 'Drains quickly, low nutrients.', imageUrl: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=400&h=300&auto=format&fit=crop' },
+  { id: 'loamy', name: 'Loamy', description: 'Balanced soil, ideal for most crops.', imageUrl: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=400&h=300&auto=format&fit=crop' },
 ];
 
 const LOCATION_OPTIONS = [
@@ -156,20 +157,22 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <ul className="steps w-full mb-8">
-        <li className={`step ${step >= 1 ? 'step-primary' : ''}`}>Crop</li>
-        <li className={`step ${step >= 2 ? 'step-primary' : ''}`}>Soil</li>
-        <li className={`step ${step >= 3 ? 'step-primary' : ''}`}>Details</li>
-        <li className={`step ${step >= 4 ? 'step-primary' : ''}`}>Advisory</li>
-      </ul>
+    <MainLayout>
+      <div className="container mx-auto px-4 py-8">
+        <ul className="steps w-full mb-8">
+          <li className={`step ${step >= 1 ? 'step-primary' : ''}`}>Crop</li>
+          <li className={`step ${step >= 2 ? 'step-primary' : ''}`}>Soil</li>
+          <li className={`step ${step >= 3 ? 'step-primary' : ''}`}>Details</li>
+          <li className={`step ${step >= 4 ? 'step-primary' : ''}`}>Advisory</li>
+        </ul>
 
-      <div className="min-h-[400px]">
-        {step === 1 && renderStep1()}
-        {step === 2 && renderStep2()}
-        {step === 3 && renderStep3()}
-        {step === 4 && renderStep4()}
+        <div className="min-h-[400px]">
+          {step === 1 && renderStep1()}
+          {step === 2 && renderStep2()}
+          {step === 3 && renderStep3()}
+          {step === 4 && renderStep4()}
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
