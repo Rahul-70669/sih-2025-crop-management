@@ -9,7 +9,7 @@ export const Footer = () => {
                     <div className="flex flex-col items-center md:items-start space-y-4 max-w-xs text-center md:text-left">
                         <div className="flex items-center gap-2">
                             <div className="w-30 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
-                                <span className="material-symbols-outlined text-[20px]">agriculture</span>
+                                <span className="material-symbols-rounded text-[20px]">agriculture</span>
                             </div>
                             <span className="text-xl font-bold text-text-dark dark:text-white tracking-tight">FarmMitra</span>
                         </div>
@@ -31,17 +31,17 @@ export const Footer = () => {
                     <div className="flex flex-col items-center md:items-end gap-4">
                         <div className="flex items-center gap-4">
                             <a aria-label="WhatsApp" className="group bg-white dark:bg-gray-800 p-2 rounded-full shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300" href="#">
-                                <span className="material-symbols-outlined text-green-600 group-hover:scale-110 transition-transform">chat</span>
+                                <span className="material-symbols-rounded text-green-600 group-hover:scale-110 transition-transform">chat</span>
                             </a>
                             <a aria-label="YouTube" className="group bg-white dark:bg-gray-800 p-2 rounded-full shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300" href="#">
-                                <span className="material-symbols-outlined text-red-600 group-hover:scale-110 transition-transform">play_circle</span>
+                                <span className="material-symbols-rounded text-red-600 group-hover:scale-110 transition-transform">play_circle</span>
                             </a>
                         </div>
                         {/* Language Selector Hint */}
                         <button className="flex items-center gap-2 text-xs font-medium text-text-muted dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                            <span className="material-symbols-outlined text-[16px]">language</span>
+                            <span className="material-symbols-rounded text-[16px]">language</span>
                             <span>English (IN)</span>
-                            <span className="material-symbols-outlined text-[14px]">expand_more</span>
+                            <span className="material-symbols-rounded text-[14px]">expand_more</span>
                         </button>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ export const Profile: React.FC = () => {
       <div className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="flex flex-col items-center text-center space-y-4 mb-8">
           <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center">
-            <span className="material-symbols-outlined text-5xl text-primary">person</span>
+            <span className="material-symbols-rounded text-5xl text-primary">person</span>
           </div>
           <div>
             <h1 className="text-2xl font-bold">{userProfile.name}</h1>
@@ -50,24 +50,24 @@ export const Profile: React.FC = () => {
               <div className="divide-y">
                 <div className="py-4 flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined opacity-60">language</span>
+                    <span className="material-symbols-rounded opacity-60">language</span>
                     <span>Language</span>
                   </div>
                   <span className="font-medium text-primary">{userProfile.language || 'English'}</span>
                 </div>
                 <div className="py-4 flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined opacity-60">notifications</span>
+                    <span className="material-symbols-rounded opacity-60">notifications</span>
                     <span>Notifications</span>
                   </div>
                   <input type="checkbox" className="toggle toggle-primary" defaultChecked />
                 </div>
                 <div className="py-4 flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined opacity-60">help</span>
+                    <span className="material-symbols-rounded opacity-60">help</span>
                     <span>Help & Support</span>
                   </div>
-                  <span className="material-symbols-outlined opacity-40">chevron_right</span>
+                  <span className="material-symbols-rounded opacity-40">chevron_right</span>
                 </div>
               </div>
             </div>

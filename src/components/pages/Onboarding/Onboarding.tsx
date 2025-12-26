@@ -66,7 +66,7 @@ export const Onboarding: React.FC = () => {
   const renderStep3 = () => (
     <div className="space-y-6 text-center">
       <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-        <span className="material-symbols-outlined text-4xl text-primary">location_on</span>
+        <span className="material-symbols-rounded text-4xl text-primary">location_on</span>
       </div>
       <h1 className="text-2xl font-bold">Your Location</h1>
       <p className="text-base-content/70">
