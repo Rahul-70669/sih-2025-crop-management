@@ -1,13 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-
+import type { Meta, StoryObj } from '@storybook/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CropAdvisory } from './CropAdvisory';
 
-const meta = {
+// Create a client for stories
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
+
+const meta: Meta<typeof CropAdvisory> = {
+  title: 'Pages/CropAdvisory',
   component: CropAdvisory,
-} satisfies Meta<typeof CropAdvisory>;
+  parameters: {
+    layout: 'fullscreen',
+  },
+  decorators: [
+    (Story) => (
+      <QueryClientProvider client={queryClient}>
+        <Story />
+      </QueryClientProvider>
+    ),
+  ],
+};
 
 export default meta;
-
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof CropAdvisory>;
 
 export const Default: Story = {};
