@@ -42,27 +42,27 @@ export const Home: React.FC = () => {
         {/* Quick Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <Button 
-            className="h-auto flex-col py-6 gap-3 rounded-3xl"
+            className="h-full flex-col py-10 gap-4 rounded-[2rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-base-200"
             onClick={() => navigate('/advisory')}
           >
-            <span className="material-symbols-outlined text-4xl">eco</span>
-            <span>Crop Advisory</span>
+            <span className="material-symbols-rounded text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+            <span className="text-lg font-bold tracking-tight">Crop Advisory</span>
           </Button>
           <Button 
-            className="h-auto flex-col py-6 gap-3 rounded-3xl"
+            className="h-full flex-col py-10 gap-4 rounded-[2rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all"
             variant="secondary"
             onClick={() => navigate('/pest-detection')}
           >
-            <span className="material-symbols-outlined text-4xl">bug_report</span>
-            <span>Pest Detection</span>
+            <span className="material-symbols-rounded text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>bug_report</span>
+            <span className="text-lg font-bold tracking-tight">Pest Detection</span>
           </Button>
           <Button 
-            className="h-auto flex-col py-6 gap-3 rounded-3xl"
-            variant="ghost"
+            className="h-full flex-col py-10 gap-4 rounded-[2rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-base-200"
+            variant="outline"
             onClick={() => navigate('/market-prices')}
           >
-            <span className="material-symbols-outlined text-4xl">trending_up</span>
-            <span>Market Prices</span>
+            <span className="material-symbols-rounded text-5xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>trending_up</span>
+            <span className="text-lg font-bold tracking-tight">Market Prices</span>
           </Button>
         </div>
 
