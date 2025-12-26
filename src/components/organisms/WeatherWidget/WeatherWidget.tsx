@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from '../../atoms/Card/Card';
 import type { WeatherWidgetProps } from './WeatherWidgetProps';
 
 export const WeatherWidget: React.FC<WeatherWidgetProps> = ({
