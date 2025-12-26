@@ -4,4 +4,5 @@ export interface IconProps {
   size?: 'small' | 'medium' | 'large';
   color?: string;
   ariaLabel?: string;
+  className?: string;
 }

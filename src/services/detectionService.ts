@@ -48,7 +48,7 @@ export const detectPest = async (imageFile: File): Promise<DetectionResult> => {
 /**
  * Saves a locally detected result to the backend history.
  */
-export const saveDetectionHistory = async (result: DetectionResult, imageFile: File): Promise<void> => {
+export const saveDetectionHistory = async (_result: DetectionResult, imageFile: File): Promise<void> => {
     // Similar to detectPest but specifically for saving history after offline inference
     // Implementation depends on specific backend route for history vs inference
     // Re-using detectPest if the backend handles both logic (inference + save)

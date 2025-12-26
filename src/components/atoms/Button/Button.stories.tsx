@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Button from './Button';
+import { Button } from './Button';
 import type { ButtonProps } from './ButtonProps';
 
 const StoryIcon = (
@@ -23,7 +23,7 @@ const StoryIcon = (
 const meta = {
   component: Button,
   argTypes: {
-    variant: { control: { type: 'select' }, options: ['primary', 'secondary', 'ghost', 'danger', 'success'] },
+    variant: { control: { type: 'select' }, options: ['primary', 'secondary', 'ghost', 'danger', 'success', 'outline'] },
     size: { control: { type: 'select' }, options: ['sm', 'md', 'lg'] },
     loading: { control: 'boolean' },
     iconPosition: { control: { type: 'radio' }, options: ['left', 'right'] },
@@ -64,6 +64,10 @@ export const Success: Story = {
   args: { variant: 'success', children: 'Success' },
 };
 
+export const Outline: Story = {
+  args: { variant: 'outline', children: 'Outline' },
+};
+
 export const Small: Story = {
   args: { size: 'sm', children: 'Small' },
 };
@@ -82,17 +86,17 @@ export const Loading: Story = {
 
 export const IconOnly: Story = {
   args: { ariaLabel: 'Close' },
-  render: (args) => <Button {...(args as ButtonProps)} icon={StoryIcon} />,
+  render: (args: ButtonProps) => <Button {...args} icon={StoryIcon} />,
 };
 
 export const WithIconLeft: Story = {
   args: { children: 'With icon', iconPosition: 'left' },
-  render: (args) => <Button {...(args as ButtonProps)} icon={StoryIcon} />,
+  render: (args: ButtonProps) => <Button {...args} icon={StoryIcon} />,
 };
 
 export const WithIconRight: Story = {
   args: { children: 'With icon', iconPosition: 'right' },
-  render: (args) => <Button {...(args as ButtonProps)} icon={StoryIcon} />,
+  render: (args: ButtonProps) => <Button {...args} icon={StoryIcon} />,
 };
 
 export const FullWidth: Story = {

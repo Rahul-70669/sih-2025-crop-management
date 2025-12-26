@@ -1,4 +1,4 @@
-import { AdvisoryRecommendation } from '../../../services/advisoryService';
+import type { AdvisoryRecommendation } from '../../../services/advisoryService';
 
 export interface AdvisoryPanelProps {
   weather: {

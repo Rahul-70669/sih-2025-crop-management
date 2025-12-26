@@ -1,6 +1,6 @@
 import React from 'react';
 import type {LanguageToggleProps} from './LanguageToggleProps';
-import Button from '../Button/Button';
+import { Button } from '../Button/Button';
 
 const LanguageToggle: React.FC<LanguageToggleProps> = ({ currentLang, onChange }) => {
   return (

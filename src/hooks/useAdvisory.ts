@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { getAdvisory, AdvisoryRequest } from '../services/advisoryService';
+import { getAdvisory } from '../services/advisoryService';
+import type { AdvisoryRequest } from '../services/advisoryService';
 
 /**
  * Hook to manage advisory data fetching and caching.

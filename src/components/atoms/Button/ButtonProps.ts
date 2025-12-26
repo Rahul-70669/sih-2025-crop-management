@@ -7,8 +7,9 @@ import type {ButtonHTMLAttributes, ReactNode} from 'react';
  * - ghost: transparent/outline style for tertiary actions
  * - danger: destructive actions (delete, remove)
  * - success: positive actions (confirm)
+ * - outline: outlined style
  */
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'success';
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' | 'outline';
 
 /**
  * Allowed sizes for the Button component. Sizes map to padding, font-size and touch target.
