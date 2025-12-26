@@ -4,7 +4,7 @@ import { SoilTypeSelector } from '../../molecule/SoilTypeSelector/SoilTypeSelect
 import LocationSelector from '../../molecule/LocationSelector/LocationSelector';
 import { Button } from '../../atoms/Button/Button';
 import { Input } from '../../atoms/Input/Input';
-import { getAdvisory, AdvisoryResponse } from '../../../services/advisoryService';
+import { getAdvisory, type AdvisoryResponse } from '../../../services/advisoryService';
 import type { CropAdvisoryProps } from './CropAdvisoryProps';
 
 // Mock Data
