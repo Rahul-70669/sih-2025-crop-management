@@ -22,7 +22,7 @@ export const Header = () => {
                 <Link to="/" className="flex items-center gap-2 group cursor-pointer text-inherit no-underline">
                     {/* Leaf Icon */}
                     <div className="relative flex items-center justify-center">
-                        <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+                        <span className="material-symbols-rounded text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                             eco
                         </span>
                     </div>
@@ -86,7 +86,7 @@ export const Header = () => {
                     <div className="flex items-center gap-3">
                         {isLoggedIn ? (
                             <Link to="/profile" className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-light dark:bg-surface-dark hover:bg-primary/10 transition-colors">
-                                <span className="material-symbols-outlined text-primary">account_circle</span>
+                                <span className="material-symbols-rounded text-primary">account_circle</span>
                                 <span className="text-sm font-bold truncate max-w-[100px]">{userProfile.name}</span>
                             </Link>
                         ) : (
@@ -98,12 +98,12 @@ export const Header = () => {
                         )}
                         {/* Search Icon */}
                         <button className="flex size-10 items-center justify-center rounded-xl text-[#0d1b13] dark:text-white hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
-                            <span className="material-symbols-outlined">search</span>
+                            <span className="material-symbols-rounded">search</span>
                         </button>
 
                         {/* Mobile Menu Button */}
                         <button className="flex md:hidden size-10 items-center justify-center rounded-xl text-[#0d1b13] dark:text-white hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
-                            <span className="material-symbols-outlined">menu</span>
+                            <span className="material-symbols-rounded">menu</span>
                         </button>
                     </div>
                 </div>

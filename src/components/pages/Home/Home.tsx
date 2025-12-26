@@ -40,29 +40,41 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 auto-rows-fr">
           <Button 
-            className="h-auto flex-col py-6 gap-3 rounded-3xl"
+            className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-none"
             onClick={() => navigate('/advisory')}
           >
-            <span className="material-symbols-outlined text-4xl">eco</span>
-            <span>Crop Advisory</span>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+              </div>
+              <span className="text-lg font-bold tracking-tight text-white">Crop Advisory</span>
+            </div>
           </Button>
           <Button 
-            className="h-auto flex-col py-6 gap-3 rounded-3xl"
+            className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all"
             variant="secondary"
             onClick={() => navigate('/pest-detection')}
           >
-            <span className="material-symbols-outlined text-4xl">bug_report</span>
-            <span>Pest Detection</span>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>bug_report</span>
+              </div>
+              <span className="text-lg font-bold tracking-tight text-white">Pest Detection</span>
+            </div>
           </Button>
           <Button 
-            className="h-auto flex-col py-6 gap-3 rounded-3xl"
-            variant="ghost"
+            className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-base-200"
+            variant="outline"
             onClick={() => navigate('/market-prices')}
           >
-            <span className="material-symbols-outlined text-4xl">trending_up</span>
-            <span>Market Prices</span>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-rounded text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>trending_up</span>
+              </div>
+              <span className="text-lg font-bold tracking-tight text-primary">Market Prices</span>
+            </div>
           </Button>
         </div>
 
@@ -76,26 +88,26 @@ export const Home: React.FC = () => {
                 onClick={() => navigate('/advisory')}
               >
                 <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-primary">eco</span>
+                  <span className="material-symbols-rounded text-primary">eco</span>
                   <div>
                     <p className="font-medium">Wheat Advisory</p>
                     <p className="text-xs text-base-content/60">2 days ago</p>
                   </div>
                 </div>
-                <span className="material-symbols-outlined text-base-content/40">chevron_right</span>
+                <span className="material-symbols-rounded text-base-content/40">chevron_right</span>
               </div>
               <div 
                 className="py-3 flex items-center justify-between cursor-pointer hover:bg-base-200 transition-colors rounded-lg px-2"
                 onClick={() => navigate('/pest-detection')}
               >
                 <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-error">bug_report</span>
+                  <span className="material-symbols-rounded text-error">bug_report</span>
                   <div>
                     <p className="font-medium">Pest Detection: Wheat Rust</p>
                     <p className="text-xs text-base-content/60">5 days ago</p>
                   </div>
                 </div>
-                <span className="material-symbols-outlined text-base-content/40">chevron_right</span>
+                <span className="material-symbols-rounded text-base-content/40">chevron_right</span>
               </div>
             </div>
           </div>
