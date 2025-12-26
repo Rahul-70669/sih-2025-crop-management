@@ -12,6 +12,9 @@ export const Header = () => {
         { name: 'Profile', path: '/profile' },
     ];
 
+    const isLoggedIn = localStorage.getItem('is_logged_in') === 'true';
+    const userProfile = JSON.parse(localStorage.getItem('user_profile') || '{}');
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[#e7f3ec] dark:border-[#1e3a29] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
             <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -81,12 +84,18 @@ export const Header = () => {
 
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">
-                        <Link to="/onboarding">
-                            <button className="flex h-10 min-w-[84px] cursor-pointer items-center justify-center rounded-xl bg-primary px-4 text-[#0d1b13] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-sm shadow-primary/25">
-                                <span className="truncate">Sign Up</span>
-                            </button>
-                        </Link>
-
+                        {isLoggedIn ? (
+                            <Link to="/profile" className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-light dark:bg-surface-dark hover:bg-primary/10 transition-colors">
+                                <span className="material-symbols-outlined text-primary">account_circle</span>
+                                <span className="text-sm font-bold truncate max-w-[100px]">{userProfile.name}</span>
+                            </Link>
+                        ) : (
+                            <Link to="/onboarding">
+                                <button className="flex h-10 min-w-[84px] cursor-pointer items-center justify-center rounded-xl bg-primary px-4 text-[#0d1b13] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-sm shadow-primary/25">
+                                    <span className="truncate">Sign Up</span>
+                                </button>
+                            </Link>
+                        )}
                         {/* Search Icon */}
                         <button className="flex size-10 items-center justify-center rounded-xl text-[#0d1b13] dark:text-white hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
                             <span className="material-symbols-outlined">search</span>

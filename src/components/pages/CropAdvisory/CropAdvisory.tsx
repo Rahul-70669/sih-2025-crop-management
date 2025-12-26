@@ -12,7 +12,7 @@ import MainLayout from '../../templates/MainLayout/MainLayout';
 // Mock Data
 const MOCK_CROPS = [
   { id: '1', name: 'Wheat', description: 'Winter crop, requires cool weather.', imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=400&h=300&auto=format&fit=crop' },
-  { id: '2', name: 'Rice', description: 'High water requirement, monsoon crop.', imageUrl: 'https://images.unsplash.com/photo-1536633101321-26ec0f06ca01?q=80&w=400&h=300&auto=format&fit=crop' },
+  { id: '2', name: 'Rice', description: 'High water requirement, monsoon crop.', imageUrl: 'https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?q=80&w=400&h=300&auto=format&fit=crop' },
   { id: '3', name: 'Corn', description: 'Versatile crop, moderate water.', imageUrl: 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=400&h=300&auto=format&fit=crop' },
   { id: '4', name: 'Cotton', description: 'Cash crop, requires dry weather.', imageUrl: 'https://images.unsplash.com/photo-1594904351111-a072f80b1a71?q=80&w=400&h=300&auto=format&fit=crop' },
 ];
