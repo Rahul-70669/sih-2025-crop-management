@@ -6,36 +6,41 @@ import { useNavigate } from 'react-router';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
+  const userProfile = JSON.parse(localStorage.getItem('user_profile') || '{"name": "Farmer", "location": "Ludhiana, Punjab"}');
 
   return (
     <MainLayout>
-      <div className="container mx-auto px-4 py-8 space-y-8">
+      <div className="container mx-auto px-4 py-8 space-y-10 max-w-5xl">
         {/* Welcome Header */}
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-3xl">
-          <h1 className="text-3xl font-bold">Namaste, Farmer!</h1>
-          <p className="text-base-content/70 mt-1">Let's grow better today.</p>
-          <p className="text-sm font-medium mt-4 flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">location_on</span>
-            Ludhiana, Punjab
-          </p>
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+            Namaste, <span className="text-primary">{userProfile.name}</span>!
+          </h1>
+          <p className="text-lg text-base-content/60">Let's grow better today in {userProfile.location}.</p>
         </div>
 
-        {/* Weather Widget */}
-        <WeatherWidget
-          location="Ludhiana, Punjab"
-          temp={32}
-          condition="Partly Cloudy"
-          humidity={65}
-          windSpeed={12}
-          forecast={[
-            { day: 'Mon', icon: '🌤️', high: 33, low: 22 },
-            { day: 'Tue', icon: '🌧️', high: 28, low: 20 },
-            { day: 'Wed', icon: '☀️', high: 34, low: 23 },
-          ]}
-        />
+        {/* Weather Widget Section */}
+        <div className="flex justify-center w-full">
+          <div className="w-full max-w-3xl">
+            <WeatherWidget
+              location={userProfile.location}
+              temp={32}
+              condition="Partly Cloudy"
+              humidity={65}
+              windSpeed={12}
+              forecast={[
+                { day: 'Mon', icon: '🌤️', high: 33, low: 22 },
+                { day: 'Tue', icon: '🌧️', high: 28, low: 20 },
+                { day: 'Wed', icon: '☀️', high: 34, low: 23 },
+                { day: 'Thu', icon: '⛅', high: 31, low: 21 },
+                { day: 'Fri', icon: '🌤️', high: 32, low: 22 },
+              ]}
+            />
+          </div>
+        </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <Button 
             className="h-auto flex-col py-6 gap-3 rounded-3xl"
             onClick={() => navigate('/advisory')}
