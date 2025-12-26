@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ImageUpload } from '../../molecule/ImageUpload/ImageUpload';
 import { Button } from '../../atoms/Button/Button';
-import { loadModel, classifyImage, Prediction } from '../../../utils/tfModel';
+import { loadModel, classifyImage } from '../../../utils/tfModel';
+import type { Prediction } from '../../../utils/tfModel';
 import type { PestDetectorProps } from './PestDetectorProps';
 
 export const PestDetector: React.FC<PestDetectorProps> = ({
