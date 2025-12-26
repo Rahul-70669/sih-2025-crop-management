@@ -42,33 +42,39 @@ export const Home: React.FC = () => {
         {/* Quick Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 auto-rows-fr">
           <Button 
-            className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-base-200"
+            className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-none"
             onClick={() => navigate('/advisory')}
           >
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-              <span className="material-symbols-rounded text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+              </div>
+              <span className="text-lg font-bold tracking-tight text-white">Crop Advisory</span>
             </div>
-            <span className="text-lg font-bold tracking-tight">Crop Advisory</span>
           </Button>
           <Button 
             className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all"
             variant="secondary"
             onClick={() => navigate('/pest-detection')}
           >
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-              <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>bug_report</span>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>bug_report</span>
+              </div>
+              <span className="text-lg font-bold tracking-tight text-white">Pest Detection</span>
             </div>
-            <span className="text-lg font-bold tracking-tight">Pest Detection</span>
           </Button>
           <Button 
             className="h-full flex-col py-12 gap-4 rounded-[2.5rem] items-center justify-center text-center shadow-sm hover:shadow-xl transition-all border-base-200"
             variant="outline"
             onClick={() => navigate('/market-prices')}
           >
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-              <span className="material-symbols-rounded text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>trending_up</span>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-rounded text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>trending_up</span>
+              </div>
+              <span className="text-lg font-bold tracking-tight text-primary">Market Prices</span>
             </div>
-            <span className="text-lg font-bold tracking-tight">Market Prices</span>
           </Button>
         </div>
 
