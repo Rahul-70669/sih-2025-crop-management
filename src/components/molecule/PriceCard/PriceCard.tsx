@@ -1,90 +1,67 @@
 import React from 'react';
 import { Card } from '../../atoms/Card/Card';
-import {Button} from '../../atoms/Button/Button';
-import Badge from '../../atoms/Badge/Badge';
+import { Icon } from '../../atoms/Icon/Icon';
 import type { PriceCardProps } from './PriceCardProps';
 
 export const PriceCard: React.FC<PriceCardProps> = ({
-  title,
+  cropName,
+  cropNameHi,
   price,
-  period,
-  description,
-  features,
-  buttonText = 'Choose Plan',
-  onButtonClick,
-  badge,
-  isRecommended = false,
-  className,
-  ...rest
+  unit,
+  trend,
+  changePercent,
+  mandiName,
+  lastUpdated,
+  onClick,
+  className
 }) => {
-  const cardAppearance = isRecommended ? 'hover' : 'default';
-  const cardBordered = !isRecommended; // Highlighted cards might use shadow instead of border, or both.
-  // Adjusting logic: if recommended, maybe we want a specific border or shadow.
-  // For now, let's say recommended cards are hoverable and have a shadow by default (via 'hover' appearance).
+  const trendConfig = {
+    up: { icon: 'trending_up', color: 'text-success', bg: 'bg-success/10' },
+    down: { icon: 'trending_down', color: 'text-error', bg: 'bg-error/10' },
+    stable: { icon: 'trending_flat', color: 'text-base-content/60', bg: 'bg-base-200' }
+  };
+
+  const trendInfo = trendConfig[trend];
 
   const header = (
     <div className="flex justify-between items-start w-full">
       <div>
-        <h3 className="text-xl font-bold">{title}</h3>
-        {description && <p className="text-sm text-gray-500 mt-1">{description}</p>}
+        <h3 className="text-lg font-bold">{cropName}</h3>
+        <p className="text-sm text-base-content/60">{cropNameHi}</p>
       </div>
-      {badge && (
-        <Badge text={badge} variant={isRecommended ? 'success' : 'default'} size="small" />
-      )}
+      <div className={`flex items-center gap-1 px-2 py-1 rounded-lg ${trendInfo.bg}`}>
+        <Icon name={trendInfo.icon} size="small" className={trendInfo.color} />
+        <span className={`text-xs font-bold ${trendInfo.color}`}>
+          {trend === 'up' ? '+' : ''}{changePercent}%
+        </span>
+      </div>
     </div>
   );
 
-  const bodyContent = (
+  const body = (
     <div className="mt-4">
-      <div className="flex items-baseline">
-        <span className="text-3xl font-extrabold">{price}</span>
-        {period && <span className="ml-1 text-gray-500">{period}</span>}
+      <div className="flex items-baseline gap-1">
+        <span className="text-2xl font-black text-primary">₹{price.toLocaleString('en-IN')}</span>
+        <span className="text-sm text-base-content/60">/{unit}</span>
       </div>
-
-      {features && features.length > 0 && (
-        <ul className="mt-6 space-y-3">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start">
-              {/* Simple checkmark icon */}
-              <svg
-                className="flex-shrink-0 w-5 h-5 text-green-500"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="ml-2 text-sm text-gray-600">{feature}</span>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="mt-4 flex items-center gap-2 text-sm text-base-content/70">
+        <Icon name="store" size="small" />
+        <span>{mandiName}</span>
+      </div>
+      <p className="text-[10px] text-base-content/40 mt-2 uppercase tracking-wider font-semibold">
+        Last updated: {lastUpdated.toLocaleDateString()}
+      </p>
     </div>
-  );
-
-  const actionsContent = (
-    <Button
-      variant={isRecommended ? 'primary' : 'secondary'}
-      fullWidth
-      onClick={onButtonClick}
-    >
-      {buttonText}
-    </Button>
   );
 
   return (
     <Card
       title={header}
-      body={bodyContent}
-      actions={actionsContent}
-      appearance={cardAppearance}
-      bordered={cardBordered}
-      className={`w-full max-w-sm ${className ?? ''}`}
-      {...rest}
+      body={body}
+      hoverable
+      bordered
+      className={`w-full max-w-sm rounded-3xl overflow-hidden ${className || ''}`}
+      onClick={onClick}
     />
   );
 };

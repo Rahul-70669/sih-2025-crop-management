@@ -1,21 +1,25 @@
-import './App.css'
-import {Header} from "./components/organisms/Header/Header.tsx";
-import {Footer} from "./components/organisms/Footer/Footer.tsx";
-import {Card} from "./components/atoms/Card/Card.tsx";
+import { BrowserRouter, Routes, Route } from 'react-router';
+import './App.css';
+import Home from './components/pages/Home/Home';
+import Onboarding from './components/pages/Onboarding/Onboarding';
+import { CropAdvisory } from './components/pages/CropAdvisory/CropAdvisory';
+import { PestDetection } from './components/pages/PestDetection/PestDetection';
+import { MarketPrices } from './components/pages/MarketPrices/MarketPrices';
+import { Profile } from './components/pages/Profile/Profile';
 
-/**
- * The main App component that serves as the root of the application.
- * It renders the Header and Footer components.
- *
- * @returns {JSX.Element} The rendered App component.
- */
 function App() {
-   return(
-       <>
-           <Header/>
-           <Card/>
-           <Footer/>
-       </>
-   )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/advisory" element={<CropAdvisory />} />
+        <Route path="/pest-detection" element={<PestDetection />} />
+        <Route path="/market-prices" element={<MarketPrices />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
 export default App;

@@ -14,49 +14,41 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const UpTrend: Story = {
   args: {
-    title: 'Basic Plan',
-    price: '$19',
-    period: '/month',
-    description: 'Essential features for individuals.',
-    features: ['1 User', '5 Projects', 'Community Support'],
-    buttonText: 'Start Free Trial',
+    cropName: 'Wheat (Kanak)',
+    cropNameHi: 'गेहूं (कनक)',
+    price: 2450,
+    unit: 'qt',
+    trend: 'up',
+    changePercent: 5.2,
+    mandiName: 'Ludhiana Mandi',
+    lastUpdated: new Date(),
   },
 };
 
-export const Recommended: Story = {
+export const DownTrend: Story = {
   args: {
-    title: 'Pro Plan',
-    price: '$49',
-    period: '/month',
-    description: 'Perfect for growing teams.',
-    features: [
-      'Up to 5 Users',
-      'Unlimited Projects',
-      'Priority Support',
-      'Analytics Dashboard',
-    ],
-    buttonText: 'Get Started',
-    isRecommended: true,
-    badge: 'Most Popular',
+    cropName: 'Rice (Chawal)',
+    cropNameHi: 'चावल',
+    price: 3100,
+    unit: 'qt',
+    trend: 'down',
+    changePercent: 2.8,
+    mandiName: 'Amritsar Mandi',
+    lastUpdated: new Date(),
   },
 };
 
-export const Enterprise: Story = {
+export const Stable: Story = {
   args: {
-    title: 'Enterprise',
-    price: '$99',
-    period: '/month',
-    description: 'Advanced features for large organizations.',
-    features: [
-      'Unlimited Users',
-      'Unlimited Projects',
-      '24/7 Dedicated Support',
-      'Custom Integrations',
-      'SSO & Advanced Security',
-    ],
-    buttonText: 'Contact Sales',
-    badge: 'Best Value',
+    cropName: 'Cotton (Kap कपास)',
+    cropNameHi: 'कपास',
+    price: 7200,
+    unit: 'qt',
+    trend: 'stable',
+    changePercent: 0,
+    mandiName: 'Bhatinda Mandi',
+    lastUpdated: new Date(),
   },
 };
