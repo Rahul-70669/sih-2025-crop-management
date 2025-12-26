@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import React, { forwardRef } from 'react';
 import type { CardProps } from './CardProps';
 import { defaultCardProps } from './CardProps';
 
-export const Card: FC<CardProps> = (props) => {
+export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const {
     children,
     figure,
@@ -24,7 +24,7 @@ export const Card: FC<CardProps> = (props) => {
   ].filter(Boolean).join(' ');
 
   return (
-    <div className={classList} {...rest}>
+    <div className={classList} {...rest} ref={ref}>
       {figure ? <figure>{figure}</figure> : null}
 
       <div className="card-body">
@@ -46,4 +46,6 @@ export const Card: FC<CardProps> = (props) => {
       </div>
     </div>
   );
-};
+});
+
+Card.displayName = 'Card';

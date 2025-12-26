@@ -6,7 +6,7 @@
 import React from 'react';
 import { defaultButtonProps, type ButtonProps } from './ButtonProps';
 
-const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   // Merge provided props with defaults
   const p: ButtonProps = { ...defaultButtonProps, ...props } as ButtonProps;
   const {
@@ -102,5 +102,3 @@ const Button: React.FC<ButtonProps> = (props) => {
     </button>
   );
 };
-
-export default Button;
