@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { Routes, Route } from 'react-router';
 import './App.css';
 import Home from './components/pages/Home/Home';
 import Onboarding from './components/pages/Onboarding/Onboarding';
@@ -9,16 +9,14 @@ import { Profile } from './components/pages/Profile/Profile';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/advisory" element={<CropAdvisory />} />
-        <Route path="/pest-detection" element={<PestDetection />} />
-        <Route path="/market-prices" element={<MarketPrices />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/onboarding" element={<Onboarding />} />
+      <Route path="/advisory" element={<CropAdvisory />} />
+      <Route path="/pest-detection" element={<PestDetection />} />
+      <Route path="/market-prices" element={<MarketPrices />} />
+      <Route path="/profile" element={<Profile />} />
+    </Routes>
   );
 }
 

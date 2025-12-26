@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+    <BrowserRouter basename="/sih-2025-crop-management">
         <App />
     </BrowserRouter>
   </QueryClientProvider>,
