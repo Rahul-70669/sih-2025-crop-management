@@ -8,6 +8,7 @@ import { Input } from '../../atoms/Input/Input';
 import { getAdvisory, type AdvisoryResponse } from '../../../services/advisoryService';
 import type { CropAdvisoryProps } from './CropAdvisoryProps';
 import MainLayout from '../../templates/MainLayout/MainLayout';
+import { useTranslation } from 'react-i18next';
 
 // Mock Data
 const MOCK_CROPS = [
@@ -32,6 +33,7 @@ const LOCATION_OPTIONS = [
 ];
 
 export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
+  const { t } = useTranslation();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     cropId: '',
@@ -69,7 +71,7 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
 
   const renderStep1 = () => (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-center">Select Your Crop</h2>
+      <h2 className="text-2xl font-bold text-center">{t('common.selectCrop')}</h2>
       <CropSelector
         crops={MOCK_CROPS}
         selectedCropId={formData.cropId}
@@ -77,7 +79,7 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
       />
       <div className="flex justify-end mt-4">
         <Button onClick={handleNext} disabled={!formData.cropId} variant="primary">
-          Next
+          {t('common.next')}
         </Button>
       </div>
     </div>
@@ -85,16 +87,16 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
 
   const renderStep2 = () => (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-center">Select Soil Type</h2>
+      <h2 className="text-2xl font-bold text-center">{t('common.selectSoil')}</h2>
       <SoilTypeSelector
         soilTypes={MOCK_SOIL_TYPES}
         selectedSoilTypeId={formData.soilTypeId}
         onSelect={(id) => setFormData({ ...formData, soilTypeId: id })}
       />
       <div className="flex justify-between mt-4">
-        <Button onClick={handleBack} variant="secondary">Back</Button>
+        <Button onClick={handleBack} variant="secondary">{t('common.back')}</Button>
         <Button onClick={handleNext} disabled={!formData.soilTypeId} variant="primary">
-          Next
+          {t('common.next')}
         </Button>
       </div>
     </div>
@@ -102,36 +104,36 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
 
   const renderStep3 = () => (
     <div className="space-y-6 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-center">Additional Details</h2>
+      <h2 className="text-2xl font-bold text-center">{t('common.additionalDetails')}</h2>
       
       <div className="form-control w-full">
         <label className="label">
-          <span className="label-text">Location</span>
+          <span className="label-text">{t('common.location')}</span>
         </label>
         <LocationSelector
           currentLocation={formData.location}
           onLocationChange={(loc) => setFormData({ ...formData, location: loc })}
           options={LOCATION_OPTIONS}
-          placeholder="Select State/Region"
+          placeholder={t('common.selectState')}
         />
       </div>
 
       <Input
-        label="Crop Stage (e.g., Sowing, Flowering)"
+        label={t('common.cropStage')}
         value={formData.stage}
         onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
-        placeholder="Enter crop stage"
+        placeholder={t('common.enterCropStage')}
       />
 
       <div className="flex justify-between mt-8">
-        <Button onClick={handleBack} variant="secondary">Back</Button>
+        <Button onClick={handleBack} variant="secondary">{t('common.back')}</Button>
         <Button 
             onClick={handleSubmit} 
             loading={loading}
             disabled={!formData.location || !formData.stage} 
             variant="primary"
         >
-          Get Advisory
+          {t('common.getAdvisory')}
         </Button>
       </div>
       {error && <div className="text-error text-center mt-2">{error}</div>}
@@ -149,7 +151,7 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
         />
         <div className="flex justify-center mt-8">
             <Button onClick={() => { setStep(1); setAdvisory(null); }} variant="secondary">
-                Start Over
+                {t('common.startOver')}
             </Button>
         </div>
       </div>
@@ -160,10 +162,10 @@ export const CropAdvisory: React.FC<CropAdvisoryProps> = () => {
     <MainLayout>
       <div className="container mx-auto px-4 py-8">
         <ul className="steps w-full mb-8">
-          <li className={`step ${step >= 1 ? 'step-primary' : ''}`}>Crop</li>
-          <li className={`step ${step >= 2 ? 'step-primary' : ''}`}>Soil</li>
-          <li className={`step ${step >= 3 ? 'step-primary' : ''}`}>Details</li>
-          <li className={`step ${step >= 4 ? 'step-primary' : ''}`}>Advisory</li>
+          <li className={`step ${step >= 1 ? 'step-primary' : ''}`}>{t('common.stepCrop')}</li>
+          <li className={`step ${step >= 2 ? 'step-primary' : ''}`}>{t('common.stepSoil')}</li>
+          <li className={`step ${step >= 3 ? 'step-primary' : ''}`}>{t('common.stepDetails')}</li>
+          <li className={`step ${step >= 4 ? 'step-primary' : ''}`}>{t('common.stepAdvisory')}</li>
         </ul>
 
         <div className="min-h-[400px]">

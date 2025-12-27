@@ -3,8 +3,10 @@ import { WeatherWidget } from '../../organisms/WeatherWidget/WeatherWidget';
 import { Button } from '../../atoms/Button/Button';
 import MainLayout from '../../templates/MainLayout/MainLayout';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 export const Home: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const userProfile = JSON.parse(localStorage.getItem('user_profile') || '{"name": "Farmer", "location": "Ludhiana, Punjab"}');
 
@@ -14,9 +16,9 @@ export const Home: React.FC = () => {
         {/* Welcome Header */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-            Namaste, <span className="text-primary">{userProfile.name}</span>!
+            {t('common.namaste')}, <span className="text-primary">{userProfile.name}</span>!
           </h1>
-          <p className="text-lg text-base-content/60">Let's grow better today in {userProfile.location}.</p>
+          <p className="text-lg text-base-content/60">{t('common.welcomeSubtitle', { location: userProfile.location })}</p>
         </div>
 
         {/* Weather Widget Section */}
@@ -49,7 +51,7 @@ export const Home: React.FC = () => {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                 <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
               </div>
-              <span className="text-lg font-bold tracking-tight text-white">Crop Advisory</span>
+              <span className="text-lg font-bold tracking-tight text-white">{t('common.cropAdvisory')}</span>
             </div>
           </Button>
           <Button 
@@ -61,7 +63,7 @@ export const Home: React.FC = () => {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                 <span className="material-symbols-rounded text-4xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>bug_report</span>
               </div>
-              <span className="text-lg font-bold tracking-tight text-white">Pest Detection</span>
+              <span className="text-lg font-bold tracking-tight text-white">{t('common.pestDetection')}</span>
             </div>
           </Button>
           <Button 
@@ -73,14 +75,14 @@ export const Home: React.FC = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
                 <span className="material-symbols-rounded text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>trending_up</span>
               </div>
-              <span className="text-lg font-bold tracking-tight text-primary">Market Prices</span>
+              <span className="text-lg font-bold tracking-tight text-primary">{t('common.market')}</span>
             </div>
           </Button>
         </div>
 
         {/* Recent Activity Section */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold">Recent Activity</h2>
+          <h2 className="text-xl font-bold">{t('common.recentActivity')}</h2>
           <div className="card bg-base-100 border border-base-200">
             <div className="card-body p-4 divide-y">
               <div 
