@@ -1,0 +1,31 @@
+{
+  "common": {
+    "home": "मुख्य पृष्ठ",
+    "advisory": "परामर्श",
+    "market": "बाज़ार",
+    "pestDetection": "कीट पहचान",
+    "profile": "प्रोफ़ाइल",
+    "signUp": "साइन अप करें",
+    "namaste": "नमस्ते",
+    "welcomeSubtitle": "आज {{location}} में बेहतर फसल उगाएं।",
+    "cropAdvisory": "फसल परामर्श",
+    "recentActivity": "हाल की गतिविधि",
+    "search": "खोजें",
+    "menu": "मेन्यू",
+    "next": "अगला",
+    "back": "पीछे",
+    "getAdvisory": "परामर्श प्राप्त करें",
+    "startOver": "फिर से शुरू करें",
+    "selectCrop": "अपनी फसल चुनें",
+    "selectSoil": "मिट्टी का प्रकार चुनें",
+    "additionalDetails": "अतिरिक्त विवरण",
+    "location": "स्थान",
+    "cropStage": "फसल का चरण (जैसे, बुआई, फूल आना)",
+    "enterCropStage": "फसल का चरण दर्ज करें",
+    "selectState": "राज्य/क्षेत्र चुनें",
+    "stepCrop": "फसल",
+    "stepSoil": "मिट्टी",
+    "stepDetails": "विवरण",
+    "stepAdvisory": "परामर्श"
+  }
+}

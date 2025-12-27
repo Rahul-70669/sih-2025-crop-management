@@ -1,0 +1,31 @@
+{
+  "common": {
+    "home": "Home",
+    "advisory": "Advisory",
+    "market": "Market",
+    "pestDetection": "Pest Detection",
+    "profile": "Profile",
+    "signUp": "Sign Up",
+    "namaste": "Namaste",
+    "welcomeSubtitle": "Let's grow better today in {{location}}.",
+    "cropAdvisory": "Crop Advisory",
+    "recentActivity": "Recent Activity",
+    "search": "Search",
+    "menu": "Menu",
+    "next": "Next",
+    "back": "Back",
+    "getAdvisory": "Get Advisory",
+    "startOver": "Start Over",
+    "selectCrop": "Select Your Crop",
+    "selectSoil": "Select Soil Type",
+    "additionalDetails": "Additional Details",
+    "location": "Location",
+    "cropStage": "Crop Stage (e.g., Sowing, Flowering)",
+    "enterCropStage": "Enter crop stage",
+    "selectState": "Select State/Region",
+    "stepCrop": "Crop",
+    "stepSoil": "Soil",
+    "stepDetails": "Details",
+    "stepAdvisory": "Advisory"
+  }
+}
