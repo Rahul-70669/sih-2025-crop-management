@@ -27,14 +27,14 @@ export const Header = () => {
         <header className="sticky top-0 z-50 w-full border-b border-[#e7f3ec] dark:border-[#1e3a29] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
             <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                 {/* Logo Section */}
-                <Link to="/" className="flex items-center gap-2 group cursor-pointer text-inherit no-underline">
+                <Link to="/" className="flex items-center gap-2 group cursor-pointer text-black no-underline">
                     {/* Leaf Icon */}
                     <div className="relative flex items-center justify-center">
                         <span className="material-symbols-rounded text-primary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                             eco
                         </span>
                     </div>
-                    <h2 className="text-xl font-bold tracking-tight text-black dark:text-white sm:text-2xl">
+                    <h2 className="text-xl font-bold tracking-tight text-black dark:text-black sm:text-2xl">
                         FarmMitra
                     </h2>
                 </Link>
@@ -49,7 +49,7 @@ export const Header = () => {
                                 `text-sm font-semibold transition-colors ${
                                     isActive 
                                     ? 'text-primary' 
-                                    : 'text-black dark:text-gray-200 hover:text-primary dark:hover:text-primary'
+                                    : 'text-black dark:text-black hover:text-primary dark:hover:text-primary'
                                 }`
                             }
                         >
@@ -71,7 +71,7 @@ export const Header = () => {
                                 onChange={(e) => handleLanguageChange(e.target.value)}
                                 className="hidden peer"
                             />
-                            <span className="text-black peer-checked:text-black dark:text-gray-400 dark:peer-checked:text-white">
+                            <span className="text-xs font-bold text-black peer-checked:text-black dark:text-black dark:peer-checked:text-black">
                                 English
                             </span>
                         </label>
@@ -84,7 +84,7 @@ export const Header = () => {
                                 onChange={(e) => handleLanguageChange(e.target.value)}
                                 className="hidden peer"
                             />
-                            <span className="text-black peer-checked:text-black dark:text-gray-400 dark:peer-checked:text-white">
+                            <span className="text-xs font-bold text-black peer-checked:text-black dark:text-black dark:peer-checked:text-black">
                                 हिंदी
                             </span>
                         </label>
@@ -95,7 +95,7 @@ export const Header = () => {
                         {isLoggedIn ? (
                             <Link to="/profile" className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-light dark:bg-surface-dark hover:bg-primary/10 transition-colors">
                                 <span className="material-symbols-rounded text-primary">account_circle</span>
-                                <span className="text-sm font-bold truncate max-w-[100px] text-black dark:text-white">{userProfile.name}</span>
+                                <span className="text-sm font-bold truncate max-w-[100px] text-black dark:text-black">{userProfile.name}</span>
                             </Link>
                         ) : (
                             <Link to="/onboarding" className="hidden sm:block">
@@ -105,14 +105,14 @@ export const Header = () => {
                             </Link>
                         )}
                         {/* Search Icon */}
-                        <button className="flex size-10 items-center justify-center rounded-xl text-black dark:text-white hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
+                        <button className="flex size-10 items-center justify-center rounded-xl text-black dark:text-black hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
                             <span className="material-symbols-rounded">search</span>
                         </button>
 
                         {/* Mobile Menu Button */}
                         <button 
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="flex lg:hidden size-10 items-center justify-center rounded-xl text-black dark:text-white hover:bg-surface-light dark:hover:bg-surface-dark transition-colors"
+                            className="flex lg:hidden size-10 items-center justify-center rounded-xl text-black dark:text-black hover:bg-surface-light dark:hover:bg-surface-dark transition-colors"
                         >
                             <span className="material-symbols-rounded">{isMenuOpen ? 'close' : 'menu'}</span>
                         </button>
@@ -133,7 +133,7 @@ export const Header = () => {
                                     `text-base font-semibold transition-colors ${
                                         isActive 
                                         ? 'text-primary' 
-                                        : 'text-black dark:text-gray-200'
+                                        : 'text-black dark:text-black'
                                     }`
                                 }
                             >
@@ -153,7 +153,7 @@ export const Header = () => {
                                 onChange={(e) => handleLanguageChange(e.target.value)}
                                 className="hidden peer"
                             />
-                            <span className="text-sm font-bold text-gray-500 peer-checked:text-black dark:text-gray-400 dark:peer-checked:text-white">
+                            <span className="text-sm font-bold text-black peer-checked:text-black dark:text-black dark:peer-checked:text-black">
                                 English
                             </span>
                         </label>
@@ -166,7 +166,7 @@ export const Header = () => {
                                 onChange={(e) => handleLanguageChange(e.target.value)}
                                 className="hidden peer"
                             />
-                            <span className="text-sm font-bold text-gray-500 peer-checked:text-black dark:text-gray-400 dark:peer-checked:text-white">
+                            <span className="text-sm font-bold text-black peer-checked:text-black dark:text-black dark:peer-checked:text-black">
                                 हिंदी
                             </span>
                         </label>
@@ -178,10 +178,10 @@ export const Header = () => {
                             <Link 
                                 to="/profile" 
                                 onClick={() => setIsMenuOpen(false)}
-                                className="flex items-center gap-3 px-2 py-2 text-black dark:text-white"
+                                className="flex items-center gap-3 px-2 py-2 text-black dark:text-black"
                             >
                                 <span className="material-symbols-rounded text-primary">account_circle</span>
-                                <span className="font-bold text-black dark:text-white">{userProfile.name}</span>
+                                <span className="font-bold text-black dark:text-black">{userProfile.name}</span>
                             </Link>
                         ) : (
                             <Link 
